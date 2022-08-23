@@ -1,5 +1,5 @@
 // Dia da semana
-const days = ["Segunda-Feira","Terça-Feira","Quarta-Feira","Quinta-Feira","Sexta-Feira","Sabádo","Domingo"];
+const days = ["Domingo","Segunda-Feira","Terça-Feira","Quarta-Feira","Quinta-Feira","Sexta-Feira","Sábado"];
 
 const d_s = new Date();
 let day = days[d_s.getDay()];
