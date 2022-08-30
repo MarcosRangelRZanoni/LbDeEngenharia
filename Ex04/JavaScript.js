@@ -8,7 +8,7 @@ function Palindromo() {
     if (textoSemEspaco == textoInverto)
         alert('É um Palíndromo!') 
     else
-        alert('Não é um Palíndromo!');
+        alert('Não é um Palíndromo!')
     
 }
 
