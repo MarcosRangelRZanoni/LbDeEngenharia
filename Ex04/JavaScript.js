@@ -5,14 +5,11 @@ function Palindromo() {
     let texto = document.getElementById('txtusuario').value;
     let textoSemEspaco = texto.replace(" ", "").toLowerCase();
     let textoInverto = invert(textoSemEspaco);
-    if (textoSemEspaco == textoInverto){
-        alert('É um Palíndromo!')
-        
-    }
-    else{
+    if (textoSemEspaco == textoInverto)
+        alert('É um Palíndromo!') 
+    else
         alert('Não é um Palíndromo!');
-        
-    }
+    
 }
 
 function invert(str) {
