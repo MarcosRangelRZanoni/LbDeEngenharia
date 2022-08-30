@@ -1,20 +1,27 @@
-function horarioAtual() {
-    let horario = new Date().toLocaleTimeString();
-    document.getElementById("hora").innerHTML = horario;
-    setTimeout(horarioAtual, 1000);
+let palavra = document.getElementById("button");
+palavra.addEventListener("click", Palindromo, false);
+
+function Palindromo() {
+    let texto = document.getElementById('txtusuario').value;
+    let textoSemEspaco = texto.replace(" ", "").toLowerCase();
+    let textoInverto = invert(textoSemEspaco);
+    if (textoSemEspaco == textoInverto){
+        alert('É um Palíndromo!')
+        
+    }
+    else{
+        alert('Não é um Palíndromo!');
+        
+    }
 }
 
-const alertPlaceholder = document.getElementById('liveAlertPlaceholder')
-
-const alert = (message, type) => {
-  const wrapper = document.createElement('div')
-  wrapper.innerHTML = [
-    `<div class="alert alert-${type} alert-dismissible" role="alert">`,
-    `   <div>${message}</div>`,
-    '   <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>',
-    '</div>'
-  ].join('')
-
-  alertPlaceholder.append(wrapper)
+function invert(str) {
+    var newString = "";
+    for (var i = str.length - 1; i >= 0; i--) { 
+        newString += str[i];
+    }
+    return newString;
+    
 }
+
 
