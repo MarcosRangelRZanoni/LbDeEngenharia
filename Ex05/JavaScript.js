@@ -9,7 +9,7 @@ btnAdicionar.addEventListener("click", function () {
     elementos.forEach(element => {
         let elementLI = document.createElement("LI");
         let textNode = document.createTextNode(element);
-        elementLI.appendChild(textNode);
+        elementLI.appendChild(textNode );
 
         elementoOL.appendChild(textNode);
     });
