@@ -1,18 +1,24 @@
-let btnAdicionar = document.getElementById("btnAdicionar");
-btnAdicionar.addEventListener("click", function () {
+var list = document.querySelector('.output ul');
+var totalBox = document.querySelector('.output p');
+var total = 0;
+list.innerHTML = '';
+totalBox.textContent = '';
 
-    let elementos = [];
-    let valor = document.getElementById("valor").value;
-    elementos.push(valor.toString());
+var products = [
+    
+];
 
-    let elementoOL = document.createElement("OL");
-    elementos.forEach(element => {
-        let elementLI = document.createElement("LI");
-        let textNode = document.createTextNode(element);
-        elementLI.appendChild(textNode );
+for(var i = 0; i < products.length; i++) {
+ var subArray = products[i].split(':');
+ var name = subArray[0];
+ var price = Number(subArray[1]);
+ total += price;
+ itemText = name + ' — $' + price;
 
-        elementoOL.appendChild(textNode);
-    });
+ var listItem = document.createElement('li');
+ listItem.textContent = itemText;
+ list.appendChild(listItem);
+}
 
-    document.body.appendChild(elementoOL);
-});
+totalBox.textContent = 'Total: $' + total.toFixed(2);
+
