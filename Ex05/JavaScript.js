@@ -1,24 +1,27 @@
-var list = document.querySelector('.output ul');
-var totalBox = document.querySelector('.output p');
-var total = 0;
-list.innerHTML = '';
-totalBox.textContent = '';
+let btnAdicionar = document.getElementById("btnAdicionar");
+let valores = document.getElementById("valores");
+let campoValor = document.querySelector('.campoValor');
+campoValor.focus();
+let elementos = [];
+let elementoOL = document.createElement("OL");
+elementoOL.id = "minhaLista";
+let p = document.getElementById("valores");
+let elementLI = document.createElement("LI");
 
-var products = [
-    
-];
+btnAdicionar.addEventListener("click", function () {
+    let valor = document.getElementById("valor").value;
+    elementos.push(valor);
+    // ordenar o array
+    console.log(elementos);
+   
+   
+    elementos.forEach(element => {
+        let textNode = document.createTextNode(element);
+        elementLI.appendChild(textNode);
 
-for(var i = 0; i < products.length; i++) {
- var subArray = products[i].split(':');
- var name = subArray[0];
- var price = Number(subArray[1]);
- total += price;
- itemText = name + ' — $' + price;
-
- var listItem = document.createElement('li');
- listItem.textContent = itemText;
- list.appendChild(listItem);
-}
-
-totalBox.textContent = 'Total: $' + total.toFixed(2);
-
+        elementoOL.appendChild(elementLI);
+        campoValor.value = '';
+        campoValor.focus();
+    });
+    p.appendChild(elementoOL);
+}); 
